@@ -1,48 +1,51 @@
 package com.webcohesion.enunciate.api.resources;
 
-import javax.lang.model.element.AnnotationMirror;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.lang.model.element.AnnotationMirror;
 
 /**
  * @author Ryan Heaton
  */
 public interface Method {
 
-  Resource getResource();
+	Resource getResource();
 
-  String getLabel();
+	String getLabel();
 
-  String getHttpMethod();
+	String getHttpMethod();
 
-  String getSlug();
+	String getSlug();
 
-  String getDescription();
+	String getDescription();
 
-  String getDeprecated();
+	String getDeprecated();
 
-  String getSince();
+	String getSince();
 
-  String getVersion();
+	String getVersion();
 
-  boolean isIncludeDefaultParameterValues();
+	boolean isIncludeDefaultParameterValues();
 
-  List<? extends Parameter> getParameters();
+	List<? extends Parameter> getParameters();
 
-  boolean isIncludeParameterConstraints();
+	boolean isIncludeParameterConstraints();
 
-  Entity getRequestEntity();
+	Entity getRequestEntity();
 
-  List<? extends StatusCode> getResponseCodes();
+	List<? extends StatusCode> getResponseCodes();
 
-  Entity getResponseEntity();
+	Entity getResponseEntity();
 
-  List<? extends StatusCode> getWarnings();
+	List<? extends StatusCode> getWarnings();
 
-  List<? extends Parameter> getResponseHeaders();
+	List<? extends Parameter> getResponseHeaders();
 
-  Set<String> getSecurityRoles();
+	List<? extends Parameter> getRequestHeaders();
 
-  Map<String, AnnotationMirror> getAnnotations();
+	Set<String> getSecurityRoles();
+
+	Map<String, AnnotationMirror> getAnnotations();
 }

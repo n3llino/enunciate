@@ -525,6 +525,27 @@
             [/#if]
         </dl>
           [/#if]
+          
+          [#if method.requestHeaders?size > 0]
+        <table class="table">
+          <caption>Request Headers</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+            [#list method.requestHeaders as requestHeader]
+          <tr>
+            <td>${requestHeader.name}</td>
+            <td>${requestHeader.description!"&nbsp;"}</td>
+          </tr>
+            [/#list]
+          </tbody>
+        </table>
+          [/#if]
+          
           [#if method.parameters?size > 0]
 
         <table class="table">
